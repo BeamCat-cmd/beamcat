@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeamCat - Making Interaction Smarter</title>
+    <!-- 引入Roboto字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img src="media/logo.png"  alt="Pulpit rock" class="logo-img" width="32px">
+                &nbsp;BeamCat</div>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav id="nav-menu">
+                <!-- 其他菜单项 -->
+                <div class="nav-items-center">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#guide">Guide</a></li>
+                        <li><a href="#faq">FAQ's</a></li>
+                        <li><a href="#contact">Content Us</a></li>
+            
+                    </ul>
+                </div>
+                <!-- 联系我们菜单项 -->
+                <div class="nav-item-login">
+                    <ul>
+                        <li onclick="openLoginModal()"><a href="">login</a></li>
+                    </ul>
+                </div>
+                <!--登录模态框-->
+                <div id="loginModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeLoginModal()">&times;</span>
+                        <p>Login Register Under development</p>
+                        <!-- <input type="text" placeholder="用户名" />
+                        <input type="password" placeholder="密码" />
+                        <button>提交</button> -->
+                    </div>
+                </div> 
+                
+            </nav>
+        </header>
+
+        <section id="home" class="hero">
+            <h1>Hands-Free Control <br>
+                with Facial Expressions</h1>
+            <p>Powered by facial recognition, providing efficient touchless operation for designers, <br> accessibility users, and remote workers.</p>
+            <a href="media/BeamCat_Setup_v1.5.0.zip" class="cta-button"> <img src="media/download.svg" alt="icon">DOWNLOAD</a>
+            <button id="openModal" class="cta-button"><img src="media/video.svg" alt="icon">WHTCH THE FULL VIDEO</button>
+            <div id="videoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <video id="modalVideo" controls>
+                        <source src="media/BeamCat2号.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="content">
+            <h2>Core Features Overview</h2>
+            <p>BeamCat offers powerful interactive control capabilities, integrating facial tracking, Gold Zone, customizable shortcuts, and accessibility mode to provide users with a smooth and precise experience.</p>
+            <div class="feature-list">
+                <div class="feature-item"> 
+                    <div class="feature-item-img">
+                        <img src="media/Facial.png" alt="">
+                        <h4>Facial Tracking</h4>
+                        <p>Accurately captures 468 facial landmarks <br>with (<)100ms latency, ensuring seamless <br> cursor movement.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-img">
+                        <img src="media/Gold.png" alt="">
+                        <h4>Gold Zone</h4>
+                        <p>Customizable high-precision operation <br>area with ±2px accuracy enhanced <br>stability in medical applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-img">
+                        <img src="media/Custom.png" alt="">
+                        <h4>Custom Shortcuts</h4>
+                        <p>Define shortcut functions and trigger <br>actions with key presses to create your <br>personalized flow.
+                        </p>
+                    </div>
+                </div>
+                <a href="xyx2.html">
+                    <div class="feature-item">
+                        <div class="feature-item-img">
+                            <img src="media/Training.png" alt="">
+                            <h4>Training Mini-Games</h4>
+                            <p>Enhance your precision while playing <br>games—fun mini-games help you master<br>control with ease!
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
+        <section id="guide" class="content">
+            <div class="guide-header">
+                <div>
+                    <h2>User Guide</h2>
+                    <p>After downloading BeamCat, follow these steps to get started quickly</p>
+                </div>
+                <a href="" class="guide-download-button"><button>GO TO DOWNLOAD</button></a>
+            </div>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <ul>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                    </ul>
+                    <h4>Installation & Setup</h4>
+                    <p>Run the installer and ensure the camera is functional. <br>
+                        It is recommended to temporarily disable antivirus <br>
+                        software (e.g., 360) or add the program to <br>the whitelist during installation to avoid conflicts.</p>
+
+                </div>
+                <div class="guide-item">
+                    <ul>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                    </ul>
+                    <h4>Core Features & Operation</h4>
+                    <p>Control the cursor via facial movements—toggle the <br>
+                        feature with CapsLock/NumLock and adjust <br>
+                        sensitivity with the Alt key. Use Shift keys for clicking, <br>
+                        and smile to trigger a radial menu supporting <br>
+                        double-click, scrolling, and more. The cursor resets <br>automatically after 3 seconds if moved off-screen.</p>
+
+                </div>
+                <div class="guide-item">
+                    <ul>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                        <li><img src="media/Shape.png" alt=""></li>
+                    </ul>
+                    <h4>Usage Tips & Troubleshooting</h4>
+                    <p>For optimal performance, maintain a distance of <br>
+                        30–40 cm and keep your face centered. If the cursor <br>
+                        malfunctions, check shortcut key status or restart the <br>
+                        program. Disable antivirus protection if conflicts <br>
+                        occur. Press F7 to exit the application.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content">
+            <div class="guide-header">
+                <div>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>This FAQ aims to address common issues users may encounter while using BeamCat, including software features, customization options, and more. Each question is answered in detail to help users get started quickly and optimize their experience.</p>
+                </div>
+                <a href="" class="guide-download-button"><button>View All FAQ’s</button></a>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>What is BeamCat? How does it <br>
+                        work?</h4>
+                    <p>BeamCat is a contactless cursor control software <br>based on facial recognition technology.</p>
+                    <a href="" class="faq-more-button"><button>Read More</button></a>
+
+                </div>
+                <div class="faq-item">
+                    <h4>What are the hardware requirements for BeamCat?</h4>
+                    <p>BeamCat has both minimum and recommended <br>hardware configurations.</p>
+                    <a href="" class="faq-more-button"><button>Read More</button></a>
+
+                </div>
+                <div class="faq-item">
+                    <h4>How can I customize shortcut keys and expression controls?</h4>
+                    <p>In BeamCat, users can easily customize shortcut keys <br>and expression controls to improve efficiency.
+                    </p>
+                    <a href="" class="faq-more-button"><button>Read More</button></a>
+
+                </div>
+            </div>
+            <div class="faq-page">
+                <div class="number-page">
+                    <span class="number-page-active">01</span>
+                    <span class="number-page-inactive">of 10</span>
+                </div>
+                <div class="page-buttons">
+                    <button><img src="./media/leftIcon.svg" alt=""></button>
+                    <button><img src="./media/rightIcon1.png" alt=""></button>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="contact" class="content">
+            <div class="contact-header">
+                <div class="contact-header-left">
+                    <img src="media/logo-beamcat.png" alt="">
+                    <div class="input-container">
+                        <img src="media/Icon.png" alt="">
+                        <input type="text" placeholder="Enter Your Email">
+                        <img src="media/sendicon.png" alt="">
+                    </div> 
+                </div>
+                
+            
+                <div class="contact-header-right">
+                    <ul>
+                        <li>Home</li>
+                        <li>Features</li>
+                        <li>Guide</li>
+                        <li>FAQ</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 BeamCat. All rights reserved.</p>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html> 
+
+<script>
+    // 获取元素
+    const modal = document.getElementById("videoModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.querySelector(".close");
+    const video = document.getElementById("modalVideo");
+
+    // 点击按钮打开弹窗
+    openBtn.addEventListener("click", function() {
+        modal.style.display = "flex";
+        video.play(); // 自动播放
+    });
+
+    // 点击关闭按钮关闭弹窗
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        video.pause(); // 关闭时暂停视频
+        video.currentTime = 0; // 复位到开始
+    });
+
+    // 点击遮罩层关闭弹窗
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+</script>

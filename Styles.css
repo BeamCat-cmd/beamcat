@@ -1,0 +1,617 @@
+/* 全局样式 */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color:#333;
+}
+
+/* 12 栏格系统 */
+.container {
+    width: 100%;
+    max-width: 1200px; /* 限制最大宽度 */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    padding: 0 16px; /* 增加左右内边距，避免内容贴边 */
+}
+
+/* 确保主要内容适配 12 栏格 */
+header, .hero, .content, footer {
+    grid-column: span 12;
+}
+
+button {
+    border:none;
+    outline:none;
+    background-color:transparent;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* 去掉左右内边距，让其在 container 内自适应 */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right:180px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+
+    padding: 14px; border-radius: 4px; justify-content: center; align-items: center; gap: 15px; display: flex;
+}
+
+
+
+nav ul li a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+   
+    color: white; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+}
+
+nav ul li a:hover {
+    color:#007AFF;
+}
+
+.nav-item-login{
+   height: 48px; padding-left: 24px; padding-right: 24px; background: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08); border-radius: 4px; justify-content: center; align-items: center; gap: 8px; display: inline-flex;
+   
+}
+
+.nav-item-login a{
+    text-align: center; justify-content: center; display: flex; flex-direction: column; color: #007AFF; font-size: 14px; font-family: Roboto; font-weight: 500; text-transform: capitalize; line-height: 21px; letter-spacing: 0.17px; word-wrap: break-word;
+}
+
+.hero {
+    background-image:url(media/banner.jpg);
+    background-size: cover; /* 让背景图片覆盖整个页面 */
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    width: 986px; 
+    margin: 0 auto; color: white; font-size: 60px; font-family: Roboto; font-weight: 300; line-height: 72px; word-wrap: break-word;
+   
+}
+
+.hero p {
+    align-self: stretch; text-align: center; color: white; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+
+    
+}
+
+
+.cta-button {
+    padding: 9px; 
+    border-radius: 4px;
+    background: #007AFF; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); justify-content: center; align-items: center; gap: 8px; display: inline-flex;
+    text-align: center; color: white; font-size: 14px; font-family: Roboto; font-weight: 500; 
+    margin-top:80px;
+    margin-right:10px;
+}
+
+.modal {
+    display: none; /* 初始隐藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 输入框样式 */
+.modal-content input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 提交按钮 */
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content p {
+    color:#999999;
+    font-size:12px;
+    font-family: Roboto;
+    font-weight:400;
+    line-height:22px;
+    letter-spacing:0.40px;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+/* 以上是登录弹框 */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 弹窗内容 */
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 视频 */
+video {
+    width: 100%;
+    max-height: 500px;
+}
+
+.cta-button:hover {
+    background-color: #409BFF;
+}
+
+.content {
+    padding: 80px 0; /* 去掉左右内边距，让其在 container 内自适应 */
+    /*text-align: center;*/
+}
+
+.content h2 {
+    align-self: stretch; color: white; font-size: 48px; font-family: Roboto; font-weight: 300; line-height: 72px; word-wrap: break-word;
+    display:block;
+    margin-bottom:0px;
+    width:900px;
+
+}
+
+.content p {
+    width: 1297px; color: #999999; font-size: 12px; font-family: Roboto; font-weight: 400; line-height: 22px; letter-spacing: 0.40px; word-wrap: break-word;
+    display:block;
+    margin-top:10px;
+    width:900px;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    
+    /* padding: 20px; */
+
+    width: 245px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    align-self: stretch; background: #212121; border-radius: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 30px; display: inline-flex;
+    padding:20px;
+}
+
+.feature-item-img img {
+    display:block;
+    width:245px;
+    height:200px;
+    border-radius:4px;
+    margin-bottom:20px;
+
+}
+.feature-item-img h4 {
+    color: white; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+    display:block;
+    margin-bottom:10px;
+}
+
+.feature-item-img p {
+    margin:0px;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item a {
+    color:#333333;
+}
+
+#guide {
+    padding-top:0px;
+}
+
+
+
+.guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guide-header a button {
+    padding: 9px;
+    background: #E5F2FF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    text-align: center;
+    color: #007AFF;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 21px;
+    letter-spacing: 0.17px;
+    word-wrap: break-word;
+    margin-top:30px;
+    
+}
+
+.guide-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.guide-item {
+    width: 326.6666px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    align-self: stretch; background: #212121; border-radius: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex;
+    padding:30px;
+    padding-top:30px;
+    padding-bottom:40px;
+}
+
+.guide-item ul {
+    display:flex;
+    /*justify-content:space-between;*/
+    padding-left:0px;
+}
+
+.guide-item ul li {
+    padding: 12px; border-radius: 100px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex;
+   
+}
+
+.guide-item ul li img {
+    width:18px;
+}
+
+.guide-item h4 {
+    color: white; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+    
+    margin-bottom:10px;}
+
+.guide-item p {
+    width: 1297px; color: #999999; font-size: 12px; font-family: Roboto; font-weight: 400; line-height: 22px; letter-spacing: 0.40px; word-wrap: break-word;
+    
+    margin:0px;
+}
+
+.faq-list {
+    align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex;
+    
+    margin-top:30px;
+}
+
+.faq-item {
+    align-self: stretch; 
+    padding: 50px; 
+    background: #212121; 
+    border-radius: 8px; 
+    outline: 1px #262626 solid; 
+    outline-offset: -1px; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 30px; 
+    display: inline-flex;
+    width:286px;
+}
+
+.faq-item h4 {
+    color: white; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+    
+    margin-bottom:10px;
+}
+
+.faq-item p {
+    color: #999999; font-size: 12px; font-family: Roboto; font-weight: 400; line-height: 22px; letter-spacing: 0.40px; word-wrap: break-word;
+    
+    margin:0px;
+}
+
+.faq-item a {
+    padding: 9px; border-radius: 4px; outline: 1px #9E9E9E solid; outline-offset: -1px; justify-content: center; align-items: center; gap: 8px; display: inline-flex;
+}
+
+.faq-item a button {
+    text-align: center; justify-content: center; display: flex; flex-direction: column; color: #007AFF; font-size: 14px; font-family: Roboto; font-weight: 500; text-transform: capitalize; line-height: 21px; letter-spacing: 0.17px; word-wrap: break-word;
+}
+
+.faq-page {
+    align-self: stretch; padding-top: 20px; border-top: 1px #212121 solid; justify-content: space-between; align-items: flex-start;
+    display: flex;
+    margin-top:40px;
+}
+
+.number-page-active {
+    color: white; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 30px; letter-spacing: 0.15px; word-wrap: break-word;
+}
+
+.number-page-inactive {
+    color: #999999; font-size: 16px; font-family: Roboto; font-weight: 500; line-height: 30px; letter-spacing: 0.15px; word-wrap: break-word;
+}
+.page-buttons {
+    justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex;
+}
+.page-buttons button {
+    padding: 10px; border-radius: 69px; outline: 1px #9E9E9E solid; outline-offset: -1px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex;
+    float:right;
+}
+
+.page-buttons button img {
+    width: 20px; height: 20px; 
+}
+
+.page-buttons button:hover {
+    background-color:#007aff;
+}
+
+.page-buttons button img:hover {
+    color:#fff;
+}
+
+.contact-header {
+    align-self: stretch;
+    
+    justify-content: space-between; /* 让左右两部分分别贴到左右边距 */
+    align-items: center;
+    gap: 80px;
+    display: flex;
+    
+}
+
+.contact-header-left {
+    width: 538px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: flex;
+}
+
+.contact-header-left img {
+    width: 120px;
+    position: relative;
+}
+
+.contact-header-right {
+    align-self: stretch;
+    justify-content: flex-end; /* 让列表贴到右边 */
+    align-items: center;
+    display: flex;
+}
+
+.contact-header-right ul {
+    flex-direction: row; /* 水平排列 */
+    justify-content: flex-end; /* 贴到右边 */
+    align-items: center;
+    gap: 60px;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.contact-header-right li {
+    color: #999999; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 24px; letter-spacing: 0.15px; word-wrap: break-word;
+}
+
+.input-container {
+    width: 326px;
+    padding: 12px 24px;
+    background: #141414;
+    border-radius: 12px;
+    outline: 1px #262626 solid;
+    outline-offset: -1px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.input-container img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.input-container input {
+    align-self: stretch;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    word-wrap: break-word;
+    background:#141414;
+    border:none;
+    width:252px;
+}
+
+.contact-header-right li {
+    display: inline-block;
+}
+
+ol {
+    list-style-position: inside;
+    padding: 0;
+}
+
+details {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+    }
+
+    .nav-items-center {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav.active {
+        display: block;
+    }
+}   
+
+/* 响应式安全区域 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 12px; /* 在小屏幕上提供更大的安全区域 */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 8px; /* 进一步增加安全区域，防止贴边 */
+        gap: 8px;
+    }
+}
