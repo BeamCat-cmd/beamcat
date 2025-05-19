@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeamCat - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.svg" alt="BeamCat">
+                <span>BeamCat</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Guide</a>
+            <a href="#">FAQ's</a>
+            <a href="#">Content Us</a>
+            <a href="login.html" class="sign-up">LOGIN</a>
+        </div>
+    </nav>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h2>Sing Up Account</h2>
+            <p class="login-subtitle">Welcome to sing up and start a different journey</p>
+            <form class="login-form">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Your Username">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Your Password">
+                    <span class="input-icon" style="right: 1rem; top: 50%; transform: translateY(-50%); position: absolute; cursor: pointer;">
+                        <img src="assets/eye-icon.svg" alt="Show Password" style="width: 20px; height: 20px;">
+                    </span>
+                </div>
+                <button type="submit" class="login-button" style="background: linear-gradient(90deg, #45F3FF 0%, #3CC8E8 48%, #2A80D6 100%); color: #000B1C;">SING UP</button>
+                <div class="divider" style="margin: 2rem 0 1rem 0;">
+                    <span>OR</span>
+                </div>
+                <div class="social-login">
+                    <button type="button" class="google-login">
+                        <img src="assets/google-icon.svg" alt="Google">
+                        Google
+                    </button>
+                    <button type="button" class="facebook-login">
+                        <img src="assets/facebook-icon.svg" alt="Facebook">
+                        Fackbook
+                    </button>
+                </div>
+                <div class="terms" style="margin-top: 1.5rem;">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms">
+                        <span class="checkmark"></span>
+                        <span class="terms-text">
+                            I have read the 
+                            <a href="#">User Agreement</a> and 
+                            <a href="#">Privacy Policy</a>
+                        </span>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
