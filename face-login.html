@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- 声明文档类型为 HTML5 -->
+<html lang="zh-CN"> <!-- HTML 文档开始，语言为中文（中国） -->
+<head>
+  <meta charset="UTF-8" /> <!-- 设置字符编码为 UTF-8，支持多语言 -->
+  <title>面部扫描登录</title> <!-- 网页标题，显示在浏览器标签上 -->
+  <link rel="stylesheet" href="face-login.css" /> <!-- 引入面部登录页面的专用样式表 -->
+  <link rel="stylesheet" href="styles.css" /> <!-- 引入全站通用样式表 -->
+</head>
+<body>
+  <div id="particles-js"></div> <!-- 用于放置粒子动画背景的容器（由 particles.js 渲染） -->
+  <nav>
+    <div class="logo"> <!-- 网站 logo 区域 -->
+        <img src="assets/logo.svg" alt="BeamCat"> <!-- 网站 logo 图片，alt 文字为 BeamCat -->
+        <span>BeamCat</span> <!-- 网站名称文字 -->
+    </div>
+    <div class="nav-links"> <!-- 导航链接区域 -->
+      <a href="Home.html">Home</a> <!-- 首页链接 -->
+      <a href="#">Guide</a> <!-- 指南链接（未指定跳转页面） -->
+      <a href="#">FAQ's</a> <!-- 常见问题链接（未指定跳转页面） -->
+      <a href="signup.html" class="sign-up">SIGN UP</a> <!-- 注册页面链接，带有 sign-up 样式 -->
+    </div>
+  </nav>
+  <main>
+    <div class="face-login-card"> <!-- 面部登录卡片容器 -->
+      <h2>Let's Verify It's You</h2> <!-- 标题：让我们验证你的身份 -->
+      <p class="face-login-subtitle">Look straight at the camera – this will just take a second!</p> <!-- 副标题：请直视摄像头，过程很快 -->
+      <div class="face-scan-area"> <!-- 面部扫描区域 -->
+        <video id="video" autoplay muted playsinline></video> <!-- 用于显示摄像头画面的 video 元素，自动播放、静音、内联播放 -->
+        <canvas id="overlay"></canvas> <!-- 用于绘制面部识别覆盖效果的画布 -->
+        <div class="face-corners"></div> <!-- 用于装饰或标记面部区域四角的容器 -->
+        <div class="face-progress" id="face-progress">0%</div> <!-- 显示面部扫描进度的百分比文本 -->
+      </div>
+      <div class="progress-bar-bg"> <!-- 进度条背景 -->
+        <div class="progress-bar" id="progressBar"></div> <!-- 实际进度条，宽度根据进度变化 -->
+      </div>
+      <div id="scan-status"></div> <!-- 用于显示扫描状态或提示信息的区域 -->
+      <button class="face-confirm-btn">CONFIRM</button> <!-- 确认按钮，用户点击后提交验证 -->
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- 引入粒子动画库 particles.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script> <!-- 引入人脸识别库 face-api.js，defer 表示页面加载后再执行 -->
+  <script defer src="face-login.js"></script> <!-- 引入本地的面部登录逻辑脚本，defer 表示页面加载后再执行 -->
+</body>
+</html>

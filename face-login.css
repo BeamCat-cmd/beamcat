@@ -1,0 +1,144 @@
+body {
+    background: radial-gradient(circle at center, #02091A 0%, #000B1C 100%); /* 设置页面背景为深蓝色径向渐变 */
+}
+  
+.face-login-card {
+    background: linear-gradient(113deg, #002744 0%, #000415 91%); /* 登录卡片背景使用深蓝色线性渐变 */
+    border-radius: 16px; /* 设置卡片圆角 */
+    box-shadow: 0 0 30px rgba(0, 225, 255, 0.15); /* 添加淡蓝色阴影效果 */
+    max-width: 400px; /* 设置卡片最大宽度 */
+    margin: 120px auto 0 auto; /* 设置卡片上边距和水平居中 */
+    padding: 2.5rem 2rem 2rem 2rem; /* 设置卡片内边距 */
+    text-align: center; /* 文本居中对齐 */
+    position: relative; /* 设置相对定位 */
+    z-index: 2; /* 设置层级，确保在背景之上 */
+    border: 1px solid #1a3a5d; /* 添加深蓝色边框 */
+}
+  
+.face-login-card h2 {
+    font-size: 2rem; /* 设置标题字体大小 */
+    margin-bottom: 0.5rem; /* 设置标题下边距 */
+    color: #fff; /* 设置标题颜色为白色 */
+}
+  
+.face-login-subtitle {
+    color: #b6d6f6; /* 设置副标题颜色为淡蓝色 */
+    font-size: 1rem; /* 设置副标题字体大小 */
+    margin-bottom: 2rem; /* 设置副标题下边距 */
+}
+  
+.face-scan-area {
+    position: relative; /* 设置相对定位 */
+    width: 200px; /* 设置扫描区域宽度 */
+    height: 200px; /* 设置扫描区域高度 */
+    margin: 0 auto 1.5rem auto; /* 设置扫描区域水平居中并添加下边距 */
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+}
+  
+.face-img {
+    width: 200px; /* 设置图片宽度 */
+    height: 200px; /* 设置图片高度 */
+    border-radius: 50%; /* 设置图片为圆形 */
+    object-fit: cover; /* 保持图片比例填充容器 */
+    filter: brightness(1.1) contrast(1.1); /* 增加亮度和对比度 */
+    box-shadow: 0 0 30px #0ff2, 0 0 0 8px #001a2a; /* 添加发光效果和边框 */
+}
+  
+.face-corners {
+    position: absolute; /* 设置绝对定位 */
+    top: 0; left: 0; right: 0; bottom: 0; /* 填充整个容器 */
+    pointer-events: none; /* 禁用鼠标事件 */
+}
+
+.face-corners::before, .face-corners::after {
+    content: ''; /* 创建伪元素 */
+    position: absolute; /* 设置绝对定位 */
+    width: 40px; height: 40px; /* 设置角标大小 */
+    border: 3px solid #00e1ff; /* 设置角标边框 */
+    border-radius: 8px; /* 设置角标圆角 */
+}
+
+.face-corners::before {
+    top: 0; left: 0; /* 定位左上角 */
+    border-right: none; border-bottom: none; /* 只显示左边和上边 */
+}
+
+.face-corners::after {
+    bottom: 0; right: 0; /* 定位右下角 */
+    border-left: none; border-top: none; /* 只显示右边和下边 */
+}
+
+.face-progress {
+    position: absolute; /* 设置绝对定位 */
+    left: 0; right: 0; bottom: 20px; /* 定位在底部 */
+    color: #fff; /* 设置文字颜色为白色 */
+    font-size: 1.3rem; /* 设置字体大小 */
+    font-weight: bold; /* 设置字体粗细 */
+    text-shadow: 0 0 8px #000; /* 添加文字阴影 */
+}
+  
+.face-scan-container {
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 设置垂直方向排列 */
+    align-items: center; /* 水平居中对齐 */
+    margin-top: 40px; /* 设置上边距 */
+}
+  
+.video-wrapper {
+    position: relative; /* 设置相对定位 */
+    width: 320px; /* 设置视频容器宽度 */
+    height: 240px; /* 设置视频容器高度 */
+}
+  
+#video, #overlay {
+    position: absolute; /* 设置绝对定位 */
+    top: 0; left: 0; /* 定位在容器左上角 */
+    width: 320px; /* 设置宽度 */
+    height: 240px; /* 设置高度 */
+    border-radius: 12px; /* 设置圆角 */
+}
+  
+.progress-bar-bg {
+    width: 320px; /* 设置进度条背景宽度 */
+    height: 16px; /* 设置进度条背景高度 */
+    background: #eee; /* 设置背景颜色 */
+    border-radius: 8px; /* 设置圆角 */
+    margin: 24px 0 8px 0; /* 设置外边距 */
+    overflow: hidden; /* 隐藏溢出内容 */
+}
+  
+.progress-bar {
+    height: 100%; /* 设置高度填充容器 */
+    width: 0%; /* 初始宽度为0 */
+    background: linear-gradient(90deg, #ff6a00, #ffb347); /* 设置渐变色背景 */
+    border-radius: 8px; /* 设置圆角 */
+    transition: width 0.2s; /* 添加宽度变化过渡效果 */
+}
+  
+#scan-status {
+    font-size: 1.1em; /* 设置字体大小 */
+    color: #333; /* 设置文字颜色 */
+    margin-top: 8px; /* 设置上边距 */
+}
+  
+.face-confirm-btn {
+    width: 100%; /* 设置按钮宽度填充容器 */
+    padding: 0.9rem 0; /* 设置内边距 */
+    border-radius: 60px; /* 设置圆角 */
+    background: linear-gradient(90deg, #45F3FF 0%, #3CC8E8 48%, #2A80D6 100%); /* 设置渐变背景 */
+    color: #000B1C; /* 设置文字颜色 */
+    font-weight: bold; /* 设置字体粗细 */
+    font-size: 1.1rem; /* 设置字体大小 */
+    border: none; /* 移除边框 */
+    cursor: pointer; /* 设置鼠标指针样式 */
+    margin-top: 1rem; /* 设置上边距 */
+    box-shadow: 0px 4px 4px rgba(255,255,255,0.15) inset; /* 添加内阴影效果 */
+    transition: all 0.3s; /* 添加过渡效果 */
+}
+
+.face-confirm-btn:hover {
+    background: linear-gradient(90deg, #2A80D6 0%, #3CC8E8 48%, #45F3FF 100%); /* 悬停时改变渐变方向 */
+    transform: translateY(-2px); /* 悬停时向上移动2像素 */
+}
