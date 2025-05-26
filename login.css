@@ -61,7 +61,7 @@
     top: 50%; /* 顶部距离 */
     transform: translateY(-50%); /* 垂直居中 */
     color: #00E1FF; /* 图标颜色 */
-    margin-top: 0.8rem; /* 顶部外边距 */
+    margin-top: 1.2rem; /* 顶部外边距 */
 }
 
 /* 忘记密码链接样式 */
