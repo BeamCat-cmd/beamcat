@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <title>BeamCat - Hands-Free Control</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="waveCanvas"></canvas>
+    <div id="particles-js"></div>
+    <nav>
+        <div class="logo">
+            <img src="assets/logo.svg" alt="BeamCat">
+            <span>BeamCat</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#guide">Guide</a>
+            <a href="#faq">FAQ's</a>
+            <!-- <a href="#">Content Us</a> -->
+            <a href="login.html" class="sign-up" style="color:#000004;">LOGIN</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div id="hero" class="hero-top">
+                <div class="hero-content">
+                    <h1>Hands-Free Control<br>with Facial Expressions</h1>
+                    <p>Touchless control via facial recognition for<br>designers and remote users.</p>
+                </div>
+                <div class="hero-buttons">
+                    <div class="cta-buttons">
+                        <button class="download" style="height: 3.5rem;">
+                            <img src="assets/download-icon.svg" alt="Download">
+                            DOWNLOAD
+                        </button>
+                        <button class="watch-video" onclick="openVideoModal()">
+                            <img src="assets/play-icon.svg" alt="Play">
+                            WATCH THE FULL VIDEO
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="guide" class="hero-arc"></div>
+            <div class="hero-bottom">
+                <div class="hero-illustration">
+                    <img src="assets/hero-illustration.png" alt="BeamCat Illustration">
+                </div>
+                <div class="hero-description">
+                    <h2>USING BEAMCAT IS VERY SIMPLE</h2>
+                    <div class="description-box">
+                        <div class="Beamcat-text"><h3>BeamCat </h3><span class="version"><p style="font-size:0.5rem">v1.1.8</p></span></div>
+                        <p>After launching, sit in front of the screen, and <br/>the system will recognize your face. Move your head <br/>or gaze, and the cursor will follow.
+                            <a class="Experience">Experience</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="faq-scroll-container">
+                <div class="faq-content">
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <img src="assets/icon1.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ1">VIEW MORE</button>
+                            <h3>What is BeamCat used for?</h3>
+                            <p>BeamCat is an intelligent interaction tool based on gesture or eye control. It allows users to perform actions such as clicking, scrolling, and zooming without touching the mouse.</p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/icon2.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ2">VIEW MORE</button>
+                            <h3>What devices does BeamCat support?</h3>
+                            <p>Currently, BeamCat only supports use on Windows. In the future, we plan to expand support to smartphones, TVs, air conditioners, washing machines, speakers, and other smart home</p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/icon3.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ3">VIEW MORE</button>
+                            <h3>How do I activate BeamCat's "Golden Zone" feature?</h3>
+                            <p>Click the 🎯 icon at the center of the circular menu to enable the "Golden Zone" feature. This mode offers lower sensitivity and is suitable for precise actions, such as clicking small </p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/faq-icon-4.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ4">VIEW MORE</button>
+                            <h3>How do I pause BeamCat's tracking feature?</h3>
+                            <p>You can press Ctrl + CapsLock on the keyboard, or click the ⏯️ Tracking icon in the circular menu to pause tracking. When paused, the system will stop responding to head movements</p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/icon5.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ5">VIEW MORE</button>
+                            <h3>What should I do if BeamCat feels inaccurate during use?</h3>
+                            <p>Please check the lighting conditions and ensure that the camera is unobstructed.</p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/icon6.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ6">VIEW MORE</button>
+                            <h3>Can BeamCat be used without an internet connection?</h3>
+                            <p>Yes. Once installed, BeamCat can run completely offline. All tracking and gesture recognition are processed locally on your device to ensure speed and privacy.</p>
+                        </div>
+                        <div class="faq-card">
+                            <img src="assets/icon7.png" alt="What is BeamCat">
+                            <button class="view-more" data-faq="FAQ7">VIEW MORE</button>
+                            <h3>Does BeamCat support customizable sensitivity and gesture settings?</h3>
+                            <p> Yes. BeamCat offers adjustable sensitivity settings. In future versions, we also plan to introduce customizable gesture configurations to better meet individual user needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>©2023 BeamCat. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="overlay"></div>
+    <div id="modal">
+        <button id="closeBtn">&times;</button>
+        <h3 id="modalTitle"></h3>
+        <div id="modalContent"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+    <script src="wave.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
